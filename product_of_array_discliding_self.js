@@ -2,6 +2,7 @@
 
 //medium
 
+// pre post way
 const productExceptSelf = nums => {
     const n = nums.length;
         const pref = [];
@@ -10,7 +11,7 @@ const productExceptSelf = nums => {
 
         pref[0] = 1;
         post[n - 1] = 1;
-        
+
         for (let i = 1; i < n; i++) {
             pref[i] = nums[i - 1] * pref[i - 1];
         }
