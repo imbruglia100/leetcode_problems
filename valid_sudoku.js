@@ -10,7 +10,9 @@
 // medium
 
 const isValidSudoku = (board) => {
+    let res = true
 
+    return res
 }
 
 // Input: board =
