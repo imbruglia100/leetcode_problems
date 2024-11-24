@@ -10,26 +10,52 @@
 // medium
 
 const isValidSudoku = (board) => {
-    let res = true
-    const key = new Set()
 
     for(let i = 0; i < board.length; i++){
+        let key = new Set()
         for(let j = 0; j < board[i].length; j++){
-            
+            if(key.has(board[i][j])){
+                return false
+            }else if(board[i][j] !== '.'){
+                key.add(board[i][j])
+            }
         }
+        console.log("Horizontal:", key)
+        key = new Set()
+        for(let k = 0; k < board.length; k++){
+            if(key.has(board[k][i])){
+                return false
+            }else if(board[k][i] !== '.'){
+                key.add(board[k][i])
+            }
+        }
+        console.log("Vertical:", key)
+        key = new Set()
+        for(let k = 0; k < board.length; k++){
+            if(key.has(board[k][i])){
+                return false
+            }else if(board[k][i] !== '.'){
+                key.add(board[k][i])
+            }
+        }
+        console.log("Vertical:", key)
     }
-    return res
+    return true
 }
 
-// Input: board =
-// [["1","2",".",".","3",".",".",".","."],
-//  ["4",".",".","5",".",".",".",".","."],
-//  [".","9","8",".",".",".",".",".","3"],
-//  ["5",".",".",".","6",".",".",".","4"],
-//  [".",".",".","8",".","3",".",".","5"],
-//  ["7",".",".",".","2",".",".",".","6"],
-//  [".",".",".",".",".",".","2",".","."],
-//  [".",".",".","4","1","9",".",".","8"],
-//  [".",".",".",".","8",".",".","7","9"]]
+
+
+let board =
+[["1","2",".",".","3",".",".",".","."],
+ ["4",".",".","5",".",".",".",".","."],
+ [".","9","8",".",".",".",".",".","3"],
+ ["5",".",".",".","6",".",".",".","4"],
+ [".",".",".","8",".","3",".",".","5"],
+ ["7",".",".",".","2",".",".",".","6"],
+ [".",".",".",".",".",".","2",".","."],
+ [".",".",".","4","1","9",".",".","8"],
+ [".",".",".",".","8",".",".","7","9"]]
 
 // Output: true
+
+console.log(isValidSudoku(board))
