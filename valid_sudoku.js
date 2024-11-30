@@ -30,15 +30,16 @@ const isValidSudoku = (board) => {
             }
         }
         console.log("Vertical:", key)
-        key = new Set()
-        for(let k = 0; k < board.length; k++){
-            if(key.has(board[k][i])){
-                return false
-            }else if(board[k][i] !== '.'){
-                key.add(board[k][i])
-            }
+
+
+    }
+    key = new Set()
+    for(let v = 0; v < board.length; v++){
+        if(key.has(board[v][i])){
+            return false
+        }else if(board[v][i] !== '.'){
+            key.add(board[k][i])
         }
-        console.log("Vertical:", key)
     }
     return true
 }
@@ -57,5 +58,5 @@ let board =
  [".",".",".",".","8",".",".","7","9"]]
 
 // Output: true
-
-console.log(isValidSudoku(board))
+console.log(4%3)
+// console.log(isValidSudoku(board))
