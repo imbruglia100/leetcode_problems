@@ -5,17 +5,17 @@ const isPalindrome = (str) => {
         return alpha.includes(el.toLowerCase())
     }).join('')
 
+    console.log(filtered)
     for(let i = 0; i < Math.floor(filtered.length/2); i++){
-        console.log(i)
-        console.log(filtered.length - 1 - i)
 
         if(filtered[i].toLowerCase() !== filtered[filtered.length - 1 - i].toLowerCase()){
             return false
         }
     }
 
+    if(filtered.length < 2) return false
     return true
 }
 
 
-console.log(isPalindrome('tab a cat'))
+console.log(isPalindrome('0P'))
