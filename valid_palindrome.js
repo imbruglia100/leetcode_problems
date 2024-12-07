@@ -5,7 +5,6 @@ const isPalindrome = (str) => {
         return alpha.includes(el.toLowerCase())
     }).join('')
 
-    console.log(filtered)
     for(let i = 0; i < Math.floor(filtered.length/2); i++){
 
         if(filtered[i].toLowerCase() !== filtered[filtered.length - 1 - i].toLowerCase()){
